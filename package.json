@@ -1,0 +1,50 @@
+{
+  "name": "dockerhub-cli",
+  "version": "0.1.4",
+  "description": "A cross-platform Docker Hub token-management CLI. Authenticates via the same OAuth device-code flow as `docker login`, persists the session, and lets you list, create, inspect, and delete Docker Hub personal access tokens.",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "dockerhub": "./dist/cli.js",
+    "dockerhub-cli": "./dist/cli.js"
+  },
+  "main": "./dist/cli.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "bun build ./src/cli.ts --target=bun --outdir=dist --format=esm",
+    "dev": "bun run ./src/cli.ts",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "cac": "6.7.14"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "bun": ">=1.1.0",
+    "node": ">=20.0.0"
+  },
+  "keywords": [
+    "docker",
+    "dockerhub",
+    "cli",
+    "oauth",
+    "token",
+    "pat"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tsecret/dockerhub-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tsecret/dockerhub-cli/issues"
+  }
+}
